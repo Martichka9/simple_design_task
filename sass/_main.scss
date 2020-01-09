@@ -1,0 +1,75 @@
+main .reload {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    #btn {
+        background: url(../img/btn-bgg.png) no-repeat left;
+        background-size: cover;
+        width: 150px;
+        height: 41px;
+        border: none;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 0.2em;
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+h3{
+    padding: 10px;
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #efe3ea;
+    
+    .arrow-up{
+        float: right;
+    }
+}
+
+//Table styles
+.rank-list {
+    max-width:700px;
+    margin: 0 auto;
+    font-size: 0.9em;
+}
+#list > li {
+    display: grid;
+    grid-template-columns: 60px 210px 120px 60px 100px 100px;
+    column-gap: 0.5em;
+    margin: 0.3em 0;
+    border-radius: 7px;
+    padding: 0.5em 0;
+    
+    & > span {
+        text-transform: capitalize;
+        display: block;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+         
+        &.club, &.name {
+            justify-content: left;
+        }
+    }
+    & > span.name > .profile-pic > img {
+        margin-right: 1em;
+    }
+    &.header {
+        height: 30px;
+    }
+    &.player-record {
+        background-color: #f9f7f6;
+        .club, .name {
+            color: #e905a6;
+        }
+        .rank, .level, .experience {
+            font-weight: bold;
+        }
+    }
+    & > .message > span > img {
+        width: 25px;
+    }
+}
+

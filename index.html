@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Simple Design Task</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="main-menu">
+                <li class="menu-item"><a href="#">Home</a></li>
+                <li class="menu-item"><a href="#">City</a></li>
+                <li class="menu-item"><a href="#">Arena</a></li>
+                <li class="menu-item"><a href="#">Guilds</a></li>
+                <li class="menu-item current"><a href="#" >Ranking</a></li>
+                <li class="menu-item sub-menu">Vip <span class="arrow-down">&#65088;</span>
+                    <ul class="layer-2-menu">
+                        <li class="menu-arrow">&#9650;</li>
+                        <li class="sub-menu-item"><a href="#">Drop down 1</a></li>
+                        <li class="sub-menu-item"><a href="#">Drop down 2</a></li>
+                        <li class="sub-menu-item"><a href="#">Menu down 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="reload">
+            <button id="btn" type="button">Reload</button>
+        </article>
+        <article class="rank-list">
+            <h3>Ranking Table <span class="arrow-up">&#65087;</span class="arrow-down"></h3>
+            <ul id="list">
+                <li class="header"><span class="rank">rank</span><span class="name">name</span><span class="club">club</span><span class="level">level</span><span class="experience">experience</span><span class="message">Messages</span class="message"></li>
+            </ul> 
+        </article>
+    </main>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="./ranking.js"></script>
+</body>
+</html>
