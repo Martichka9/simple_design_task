@@ -78,3 +78,25 @@ h3{
     }
 }
 
+//Pagination
+#pages {
+    display: flex;
+    justify-content: center;
+    .page {
+        color: #888381;
+        font-size: 18px;
+        border-radius: 50%;
+        width: 20px;
+        text-align: center;
+        margin: 0.3em;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #f9f7f6;
+        }
+    }
+    .current {
+        background-color: #f9f7f6;
+        color: #777371;
+    }
+}
