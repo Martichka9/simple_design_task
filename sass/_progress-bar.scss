@@ -1,0 +1,50 @@
+#progress-bar {
+    display: none;
+    position: absolute;
+    height: 41px;
+    width: 325px;
+    margin-left: 88px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+    img {
+        position: absolute;
+        height: 41px;
+    }
+    .progress {    
+        position: absolute;    
+        height: 41px;
+        width: 325px;
+        background-color: #edd2e3;
+        z-index: 5;
+    }
+    .clock-icon, #time {
+        z-index: 6;
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 9px;
+        height: 26px;
+        width: 16px;
+    }
+    .clock-icon img {
+        height: 23px;
+        width: 13px;
+    }
+    #time {
+        margin-left: 70%;
+        margin-top: 12px;
+        color: #ff2294;
+        font-weight: bold;
+    }
+    &.timer {
+        display: block;
+        .progress{
+            animation: progressBar 10s linear;
+        }
+    }
+}
+
+
+@keyframes progressBar {
+    to {width: 150px;}
+}

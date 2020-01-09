@@ -1,7 +1,23 @@
+var timer;
+var interval;
+
 $(document).ready(function(){
     loadRankList(0);
     document.getElementById("btn").addEventListener("click", function (e) {
-        loadRankList(1);
+        e.target.setAttribute('disabled', true);
+        clearList();
+        document.getElementById('progress-bar').classList.add('timer');
+        let tempTimer = 10;
+        interval = setInterval(function (){
+            tempTimer -= 1;
+            document.getElementById('time').innerHTML = `00:00:0${tempTimer}`;
+        },1000);
+        timer = setTimeout(function(){
+            loadRankList(1);
+            e.target.removeAttribute('disabled');
+            document.getElementById('progress-bar').classList.remove('timer');
+            clearTimer();
+        }, 10000);
     });
 });
 
@@ -14,7 +30,6 @@ function loadRankList(sort) {
         else if (data.status === 1 && sort === 1) {
             let result = Object.values(data.ranking).map(value => value);  
             result = result.sort((player1, player2) => Number(player2.experience) - Number(player1.experience));
-            clearList();
             printRecords(result);
         }
         else {
@@ -45,4 +60,9 @@ function clearList(){
     clearArr.forEach(function(playerRecord) {
         playerRecord.parentNode.removeChild(playerRecord);
     });
+}
+
+function clearTimer(){
+    clearTimeout(timer);
+    clearInterval(interval);
 }
