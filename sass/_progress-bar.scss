@@ -15,7 +15,7 @@
         position: absolute;    
         height: 41px;
         width: 325px;
-        background-color: #edd2e3;
+        background-color: $lightPink2;
         z-index: 5;
     }
     .clock-icon, #time {
@@ -33,7 +33,7 @@
     #time {
         margin-left: 70%;
         margin-top: 12px;
-        color: #ff2294;
+        color: $pink3;
         font-weight: bold;
     }
     &.timer {

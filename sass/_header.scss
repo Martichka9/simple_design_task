@@ -1,24 +1,23 @@
 header{
     height: 100px;
     .main-menu {
-        display: flex;
-        justify-content: center;
-        max-width: 750px;
+        @include displayFlex;
+        max-width: $headerMaxWidth;
         margin: 0 auto;
         
         .menu-item {
             font-weight: bold;
-            background-color: #f7f6f5;
+            background-color: $lightRed2;
             padding: 0.3em 1em;
             margin: 2em 0.5em;
-            border-radius: 7px;
+            border-radius: $primaryBorderRadius;
             width: 105px;
             text-align: center;
             position: relative;
         }
 
         .currentPage {
-            color: #e90ca8;
+            color: $pink;
             background-color: #fff;
         }
     }
@@ -42,9 +41,9 @@ header{
     .sub-menu:hover .layer-2-menu {
         display: block;
         position: absolute;
-        background-color: #f7f6f5;
+        background-color: $lightRed2;
         margin: 20px -30%;
-        border-radius: 7px;
+        border-radius: $primaryBorderRadius;
         width: 135px;
         padding: 1em 0;
 
@@ -56,7 +55,7 @@ header{
         .menu-arrow {
             position: absolute;
             top:-15px;
-            color: #f7f6f5;
+            color: $lightRed2;
             width: 100%;
             text-align: center;
             transform: scaleX(2);

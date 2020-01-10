@@ -1,0 +1,20 @@
+$headerMaxWidth: 750px;
+$mainMaxWidth: 700px;
+$primaryBorderRadius: 7px;
+
+//Colors
+$bodyBGG: #ebe5e1;
+$lightRed: #f9f7f6;
+$lightRed2: #f7f6f5;
+$lightPink: #efe3ea;
+$lightPink2: #edd2e3;
+$pink: #e90ca8;
+$pink2: #e905a6;
+$pink3: #ff225b;
+$gray1: #888381;
+$gray2: #777371;
+
+@mixin displayFlex {
+    display: flex;
+    justify-content: center;
+}
