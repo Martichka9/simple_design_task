@@ -22,16 +22,38 @@ main .reload {
         opacity: 0.5;
     }
 }
-h3{
+h3#rankingTab{
     padding: 10px;
     max-width: 700px;
     margin: 30px auto;
     background-color: #efe3ea;
     
+    &:hover {
+        cursor: pointer;
+    }
     .arrow-up{
         float: right;
+        height: 23px;
     }
 }
+
+#ranking-container.opened {
+    display: block;
+}
+#ranking-container.closed {
+    display: none;
+}
+
+//Table header
+.arrow-up.arrow-open{
+    transform: rotateX(0deg);
+    transition: transform 0.1s linear;
+}
+
+.arrow-up.arrow-close{
+    transform: rotateX(180deg);
+}
+
 
 //Table styles
 .rank-list {
@@ -95,8 +117,46 @@ h3{
             background-color: #f9f7f6;
         }
     }
-    .current {
+    & .current {
         background-color: #f9f7f6;
         color: #777371;
+    }
+}
+
+//Error popup styles
+#error {
+    background-color: #ff225b;
+    color:#fff;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em 1em;
+    width: 320px;
+    position: fixed;
+    left: 50%;
+    margin-left: -140px;
+    top: 61%;
+    border-radius: 3px;
+    display: none;
+    
+    h2 {
+        font-family: 'Sedgwick Ave Display', cursive;
+        font-size: 2.5em;
+    }
+    
+    #close {
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 0.6em;
+        background: none;
+        border: none;
+        color: inherit;
+    }
+    
+    &.showError {
+        display: block;
     }
 }

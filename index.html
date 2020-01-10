@@ -15,7 +15,7 @@
                 <li class="menu-item"><a href="#">City</a></li>
                 <li class="menu-item"><a href="#">Arena</a></li>
                 <li class="menu-item"><a href="#">Guilds</a></li>
-                <li class="menu-item current"><a href="#" >Ranking</a></li>
+                <li class="menu-item currentPage"><a href="#" >Ranking</a></li>
                 <li class="menu-item sub-menu">Vip <span class="arrow-down">&#65088;</span>
                     <ul class="layer-2-menu">
                         <li class="menu-arrow">&#9650;</li>
@@ -37,13 +37,20 @@
                 <div id="time">00:00:10</div>
             </div>
         </article>
-        <article class="rank-list">
-            <h3>Ranking Table <span class="arrow-up">&#65087;</span class="arrow-down"></h3>
-            <ul id="list">
-                <li class="header"><span class="rank">rank</span><span class="name">name</span><span class="club">club</span><span class="level">level</span><span class="experience">experience</span><span class="message">Messages</span class="message"></li>
-            </ul> 
-            <ul id="pages">
-            </ul>
+        <article class="rank-list">          
+            <div id="error">
+                <h2>Error</h2>
+                <p>Error text</p>
+                <button id="close">&#9587;</button>
+            </div>
+            <h3 id="rankingTab" onclick="showHideRanking()">Ranking Table <span class="arrow-up arrow-open">&#65087;</span></h3>
+            <div id="ranking-container" class="opened">
+                <ul id="list">
+                    <li class="header"><span class="rank">rank</span><span class="name">name</span><span class="club">club</span><span class="level">level</span><span class="experience">experience</span><span class="message">Messages</span class="message"></li>
+                </ul> 
+                <ul id="pages">
+                </ul>
+            </div>
         </article>
     </main>
     <script

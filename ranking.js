@@ -4,6 +4,12 @@ var sorted = false; // is the list currently sorted
 
 $(document).ready(function(){
     loadRankList(0,1); //Initially load unsorted rank list
+
+    //Close error message
+    document.getElementById("close").addEventListener("click", (e) => {
+        document.querySelector('#error').classList.remove('showError');
+    });
+
     document.getElementById("btn").addEventListener("click", (e) => {
         e.target.setAttribute('disabled', true);
         clearList();// Clear list before load ordered records
@@ -41,8 +47,8 @@ function loadRankList(sort = 0,page) {
             printRecords(resultSort,firstRecord,lastRecord);
             addPages(result.length,page);
         }
-        else {
-            console.log("error");
+        else if (data.status != 1)  {
+            document.querySelector('#error').classList.add('showError');
         }
     }});
 }
@@ -53,7 +59,7 @@ function printRecords(recordsArr,start,end) {
     recordsArr.forEach((elem, index) => {
         $("#list").append(`                                    
             <li class="player-record">
-                <span class="rank">${index+1}</span>
+                <span class="rank">${index+start+1}</span>
                 <span class="name"><span class="profile-pic"><img src="./img/profile-pic.png" alt="profile picture"></span>${elem.name}</span>
                 <span class="club">${elem.club}</span>
                 <span class="level">${elem.level}</span>
@@ -101,5 +107,21 @@ function changePage(page) {
         loadRankList(1,page);
     } else {
         loadRankList(undefined,page);
+    }
+}
+
+//Ranking tab show hide list
+function showHideRanking () {
+    if (!!document.querySelector('.opened')) {
+        document.getElementById('ranking-container').classList.remove('opened');
+        document.getElementById('ranking-container').classList.add('closed');
+        document.querySelector('.arrow-up').classList.remove('arrow-open');
+        document.querySelector('.arrow-up').classList.add('arrow-close');
+    } else {
+        document.getElementById('ranking-container').classList.remove('closed');
+        document.getElementById('ranking-container').classList.add('opened');
+        document.querySelector('.arrow-up').classList.remove('arrow-close');
+        document.querySelector('.arrow-up').classList.add('arrow-open');
+        
     }
 }
