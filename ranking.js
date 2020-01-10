@@ -50,6 +50,9 @@ function loadRankList(sort = 0,page) {
         else if (data.status != 1)  {
             document.querySelector('#error').classList.add('showError');
         }
+    },error: (err) => {
+        document.querySelector('#error').classList.add('showError');
+        document.querySelector('#error > p').innerHTML = err.statusText;
     }});
 }
 
