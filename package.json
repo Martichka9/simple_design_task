@@ -5,13 +5,13 @@
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "child_process": "^1.0.2",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
-    "gulp-sass": "^4.0.2",
-    "http-server": "^0.12.1",
-    "open": "^7.0.0"
+    "gulp-sass": "^4.1.0",
+    "http-server": "^0.12.3",
+    "open": "^7.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
